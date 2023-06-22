@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import companyLogo from '../Resources/Logo.svg'
 
-export const Navbar = () => {
+const Navbar = () => {
     return (
         <nav>
             <img src={companyLogo} alt="Company Logo" />
@@ -14,3 +14,5 @@ export const Navbar = () => {
         </nav>
     )
 }
+
+export default Navbar;

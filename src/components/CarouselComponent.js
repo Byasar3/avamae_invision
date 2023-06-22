@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
-export const CarouselComponent = ({image}) => {
-
+const CarouselComponent = ({image}) => {
     return (
-        console.log({image}),
+        
         <Swiper
         params={{
             lazy: true,
@@ -27,3 +26,4 @@ export const CarouselComponent = ({image}) => {
     )
 }   
 
+export default CarouselComponent;

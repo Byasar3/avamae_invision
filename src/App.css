@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  background-color: rgb(210, 61, 61);
+  padding: 16px 32px;
+}
+
+nav a {
+  padding-left: 16px;
+}
+
+.logInButton {
+  background-color: aliceblue;
+  padding: 20px;
+  border: none;
+  color: rgb(81, 147, 205);
+}
+
+.swiper {
+  size: 50px, 50px;
+}

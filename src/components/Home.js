@@ -1,9 +1,14 @@
-import { CarouselComponent } from "./CarouselComponent"
+import CarouselContainer from "../containers/CarouselContainer"
+import CarouselComponent from "./CarouselComponent";
 
-export const Home = () => {
+
+const Home = () => {
     return (
         <div>
-            <CarouselComponent/>
+            <CarouselContainer/>
+           
         </div>
     )
 }
+
+export default Home;

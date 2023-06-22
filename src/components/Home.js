@@ -1,6 +1,4 @@
 import CarouselContainer from "../containers/CarouselContainer"
-import CarouselComponent from "./CarouselComponent";
-
 
 const Home = () => {
     return (

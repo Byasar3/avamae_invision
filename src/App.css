@@ -70,3 +70,13 @@ nav a {
   object-fit: cover;  
 }
 
+.CarouselText {
+  position: absolute;
+  top: 15%;
+  left: 40px;
+  color: white;
+  list-style: none;
+  z-index: 10000;
+  width: 40%;
+  font-size: 0.8em;
+}

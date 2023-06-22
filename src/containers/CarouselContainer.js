@@ -37,9 +37,13 @@ const CarouselContainer = () => {
             <SwiperSlide key={image.id} className='CarouselSlides'>
                 <div>
                     <img className='CarouselImages' src={image.ImageUrl} alt={image.Subtitle} />
-                    <h1>{image.Title}</h1>
-                    <h2>{image.Subtitle}</h2>
-                    <Link to='/contact-us'><button>Contact Us</button></Link>
+                    <div className='CarouselText'>
+                        <h1>{image.Title}</h1>
+                        <h2>{image.Subtitle}</h2>
+                        <Link to='/contact-us'><button>Contact Us</button></Link>
+                    </div>
+
+
                 </div>
     
             </SwiperSlide>

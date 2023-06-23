@@ -29,9 +29,7 @@ const CarouselContainer = () => {
         pagination={{
             dynamicBullets:true,
             clickable:true,
-        }}
-        
-        >
+        }}>
             {images.map(image => {
             return (
             <SwiperSlide key={image.id} className='CarouselSlides'>
@@ -40,7 +38,7 @@ const CarouselContainer = () => {
                     <div className='CarouselText'>
                         <h1>{image.Title}</h1>
                         <h2>{image.Subtitle}</h2>
-                        <Link to='/contact-us'><button>Contact Us</button></Link>
+                        <Link to='/contact-us'><button className="CarouselButton">Contact Us</button></Link>
                     </div>
 
 

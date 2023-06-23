@@ -4,13 +4,22 @@ import companyLogo from '../Resources/Logo.svg'
 const Navbar = () => {
     return (
         <nav>
-            <img src={companyLogo} alt="Company Logo" />
-            <Link to='/'>Home</Link>
-            <Link to='/about-us'>About Us</Link>
-            <Link to='/contact-us'>Contact Us</Link>
-            <button className="logInButton">
-                Log In
-            </button>
+            <img src={companyLogo} alt="Company Logo" className="NavbarLogo"/>
+            <ul className="NavUl">
+                <li>
+                    <Link to='/'>HOME</Link>
+                </li>
+                <li>
+                    <Link to='/about-us'>ABOUT US</Link>
+                </li>
+                <li>
+                    <Link to='/contact-us'>CONTACT US</Link>
+                </li>
+                <button className="LogInButton">
+                    Log In
+                </button>
+            </ul>
+
         </nav>
     )
 }

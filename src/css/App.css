@@ -1,0 +1,65 @@
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+
+.NavUl {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  font-size: xx-small;
+  color: black;
+  align-items: center;
+}
+
+.NavbarLogo {
+  width: 150px;
+  height: 60px;
+  align-items: center;
+}
+
+.LogInButton {
+  background-color: aliceblue;
+  padding: 15px;
+  border: none;
+  color: rgb(50, 50, 215);
+  align-items: flex-end;
+  font-size: xx-small;
+  font: bolder;
+}
+
+.CarouselSlides {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.CarouselImages {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: 40% 28%;
+}
+
+.CarouselText {
+  position: absolute;
+  top: 15%;
+  left: 40px;
+  color: white;
+  list-style: none;
+  width: 35%;
+  font-size: x-small;
+}

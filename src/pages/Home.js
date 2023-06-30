@@ -1,9 +1,9 @@
-import CarouselContainer from "../containers/CarouselContainer"
+import CarouselComponent from "../components/CarouselComponent"
 import OfficePhoto from "../Resources/shutterstock_696636346.jpg"
 const Home = () => {
     return (
-        <div>
-            <CarouselContainer/>
+        <div className="Home">
+            <CarouselComponent/>
             <div>
                 <div className="HomePartTwo">
                     part 2:

@@ -1,29 +1,48 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
+const CarouselContainer = () => {
+    
+    const [images, setImages] = useState([]);
 
-const CarouselComponent = ({image}) => {
+    useEffect(() => {
+        axios({
+            method: 'get',
+            url: 'https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details'
+        }).then(response => {
+            setImages(response.data.Details)
+        })
+    }, []);
+    
+      console.log('Images:', images);
     return (
-        
         <Swiper
-        params={{
-            lazy: true,
-            Pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true
-            }
-        }}
-        >
-            <SwiperSlide>
-                    <img src={image.ImageURL} alt={image.Subtitle}/>
-                    <div>
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        modules = {[Pagination]}
+        pagination={{
+            dynamicBullets:true,
+            clickable:true,
+        }}>
+            {images.map(image => {
+            return (
+            <SwiperSlide key={image.id} className='CarouselSlides'>
+                <div>
+                    <img className='CarouselImages' src={image.ImageUrl} alt={image.Subtitle} />
+                    <div className='CarouselText'>
                         <h1>{image.Title}</h1>
                         <h2>{image.Subtitle}</h2>
-                        <button>Contact Us</button>
+                        <Link to='/contact-us'><button className="CarouselButton">Contact Us</button></Link>
                     </div>
-                </SwiperSlide>
+                </div>
+            </SwiperSlide>
+            )})}
         </Swiper>
-    )
-}   
+        );
+    };
 
-export default CarouselComponent;
+export default CarouselContainer;

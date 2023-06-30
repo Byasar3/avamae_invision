@@ -40,17 +40,11 @@ const CarouselContainer = () => {
                         <h2>{image.Subtitle}</h2>
                         <Link to='/contact-us'><button className="CarouselButton">Contact Us</button></Link>
                     </div>
-
-
                 </div>
-    
             </SwiperSlide>
-            );
-})}
+            )})};
         </Swiper>
-        
-    );
-
-};
+        );
+    };
 
 export default CarouselContainer;

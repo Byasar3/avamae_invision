@@ -1,12 +1,13 @@
 import CarouselContainer from "../containers/CarouselContainer"
-
+import OfficePhoto from "../Resources/shutterstock_696636346.jpg"
 const Home = () => {
     return (
         <div>
             <CarouselContainer/>
             <div>
-                <div>
+                <div className="HomePartTwo">
                     part 2:
+                    <img src={OfficePhoto} alt="office space" className="OfficePhoto"/>
                     image of office on RHS
                     text on LHS with non functioning 'learn more' button
                 </div>

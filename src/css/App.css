@@ -88,3 +88,14 @@ nav {
   font-size: x-small;
   font: bolder;
 }
+
+.HomePartTwo {
+display: inline-flex;
+}
+
+.OfficePhoto {
+  width: 400px;
+  height: 250px;
+  align-items: flex-end;
+
+}

@@ -8,7 +8,6 @@ body {
   overflow-x: scroll;
   overflow-y: scroll; 
   height: 100vh;
-  width: 100vh;
 }
 
 nav {
@@ -18,6 +17,7 @@ nav {
   position: relative;
   margin-left: 10vh;
   margin-right: 10vh;
+  width: 100vh;
 }
 
 .NavUl {
@@ -93,7 +93,7 @@ nav {
 display: inline-flex;
 }
 
-.OfficePhoto {
+.HomePartTwoPhoto {
   width: 400px;
   height: 250px;
   align-items: flex-end;

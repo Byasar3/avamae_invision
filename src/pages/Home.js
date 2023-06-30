@@ -7,7 +7,7 @@ const Home = () => {
             <div>
                 <div className="HomePartTwo">
                     part 2:
-                    <img src={OfficePhoto} alt="office space" className="OfficePhoto"/>
+                    <img src={OfficePhoto} alt="office space" className="HomePartTwoPhoto"/>
                     image of office on RHS
                     text on LHS with non functioning 'learn more' button
                 </div>

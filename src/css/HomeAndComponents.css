@@ -97,11 +97,11 @@
     border-radius: 5px;
   }
   
-    .HomePartTwo {
+  .HomePartTwo {
     display: flex;
     align-items: center;
     margin: 5vh 10vh;
-    }
+  }
 
   .HomePartTwoText {
     flex: 1;

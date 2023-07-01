@@ -1,0 +1,35 @@
+@media (min-width: 992px) {
+
+    body {
+        overflow-x: auto;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+
+    .AboutUsText {
+        display: flex;
+        flex-direction: column;
+        padding: 4vh 10vh;
+    }
+
+    .FirstLine {
+        font-weight: bold;
+    }
+
+    .ImageContainer {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 25px;
+    }
+
+    .AboutUsText img {
+        height: 500px;
+        width: 750px;
+    }
+
+    .AboutUsText ul.ColumnList li {
+        list-style-position: inside; /* Place the bullet points inside the list */
+        font-weight: bold;
+    }
+
+}

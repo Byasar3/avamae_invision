@@ -172,4 +172,29 @@
     font: bolder;
     border-radius: 5px;
   }
+
+  .HomePartFour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 10vh;
+  }
+
+  .HomePartFour h3 {
+    margin-bottom: 15px;
+  }
+
+  .HomePartFour h4 {
+    margin-bottom: 20px;
+  }
+
+  .HomePartFourParagraphs {
+    font-size: 16px;
+    column-count: 3; /* Number of columns */
+    column-gap: 30px; /* Gap between columns */
+  }
+
+.HomePartFour p {
+  margin-bottom: 10px;
+}
 }

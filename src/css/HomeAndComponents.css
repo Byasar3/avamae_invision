@@ -112,14 +112,14 @@
     margin-bottom: 10px;
   }
   
-  .HomePartTwoPhoto {
+  .HomePartTwo img {
     width: 600px;
     height: 400px;
     margin-left: 50px;
     border-radius: 5px;
   }
 
-  .HomePartTwoLearnMoreBtn {
+  .HomePartTwo button {
     background-color: rgb(27, 129, 218);
     padding: 15px 30px;
     border: none;
@@ -133,7 +133,7 @@
     position: relative;
   }
 
-  .HomePartThreePhoto {
+  .HomePartThree img {
     display: block;
     height: 500px;
     width: 100%;

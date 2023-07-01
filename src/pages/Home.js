@@ -16,13 +16,12 @@ const Home = () => {
                             <li>Ut qui dicant copiosae interpretaris</li>
                             <li>Ut indoctum patrioque voluptaria duo, ut vis semper abhorreant</li>
                         </ul> <br/>
-                        <button className="HomePartTwoLearnMoreBtn">Learn More</button>
+                        <button>Learn More</button>
                     </div>
-
-                    <img src={OfficePhoto} alt="office space" className="HomePartTwoPhoto"/>
+                    <img src={OfficePhoto} alt="office space"/>
                 </div>
                 <div className="HomePartThree">
-                    <img src={WomanPouting} alt="woman with sunglasses, pouting" className="HomePartThreePhoto"/>
+                    <img src={WomanPouting} alt="woman with sunglasses, pouting"/>
                     <div className="HomePartThreeText">
                         <h3>Nulla sem urna, dictum sed nisi in, viverra rutrum neque</h3> <br/>
                         <p>Cras sit amet dapibus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus nulla quis lorem mollis lacinia. Fusce ut arcu ligula. Pellentesque augue ex, pellentesque ut maximus non, eleifend ut lorem. Vestibulum rutrum malesuada turpis, molestie mattis velit maximus ac. Quisque iaculis hendrerit ex et tincidunt. Aenean eu magna ut nisi placerat fringilla in sed diam.</p>

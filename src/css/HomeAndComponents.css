@@ -23,6 +23,7 @@
     justify-content: space-between;
     position: relative;
     width: 100vw;
+    border-bottom: 1px solid rgb(170, 168, 168);
   }
   
   .NavUl {
@@ -38,9 +39,10 @@
   
   .NavbarLogo {
     width: 150px;
-    height: 60px;
+    height: 80px;
     align-items: center;
     margin-left: 10vh; 
+    
   }
   
   .LogInButton {

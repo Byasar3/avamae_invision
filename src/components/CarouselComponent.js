@@ -34,8 +34,8 @@ const CarouselContainer = () => {
                 <div>
                     <img className='CarouselImages' src={image.ImageUrl} alt={image.Subtitle} />
                     <div className='CarouselText'>
-                        <h1>{image.Title}</h1>
-                        <h2>{image.Subtitle}</h2>
+                        <h1>{image.Title}</h1> <br/>
+                        <h2>{image.Subtitle}</h2> <br/>
                         <Link to='/contact-us'><button className="CarouselButton">Contact Us</button></Link>
                     </div>
                 </div>

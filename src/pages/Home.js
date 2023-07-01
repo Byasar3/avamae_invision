@@ -1,5 +1,6 @@
 import CarouselComponent from "../components/CarouselComponent"
 import OfficePhoto from "../Resources/shutterstock_696636415.jpg"
+import WomanPouting from "../Resources/shutterstock_1302552622.jpg"
 const Home = () => {
     return (
         <div className="Home">
@@ -20,11 +21,13 @@ const Home = () => {
 
                     <img src={OfficePhoto} alt="office space" className="HomePartTwoPhoto"/>
                 </div>
-                <div>
-                    part 3:
-                    image filling up full block
-                    darker grey box on image with text
-                    non functioning 'log in' button
+                <div className="HomePartThree">
+                    <img src={WomanPouting} alt="woman with sunglasses, pouting" className="HomePartThreePhoto"/>
+                    <div className="HomePartThreeText">
+                        <h3>Nulla sem urna, dictum sed nisi in, viverra rutrum neque</h3> <br/>
+                        <p>Cras sit amet dapibus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus nulla quis lorem mollis lacinia. Fusce ut arcu ligula. Pellentesque augue ex, pellentesque ut maximus non, eleifend ut lorem. Vestibulum rutrum malesuada turpis, molestie mattis velit maximus ac. Quisque iaculis hendrerit ex et tincidunt. Aenean eu magna ut nisi placerat fringilla in sed diam.</p>
+                        <button>Log In</button>
+                    </div>
                 </div>
                 <div>
                     part 4:

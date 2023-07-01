@@ -11,8 +11,8 @@
   }
   
   body {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: 100vh;
     width: 100vw;
   }
@@ -107,6 +107,10 @@
     flex: 1;
     font-size: small;
   }
+
+  ul li {
+    margin-bottom: 10px;
+  }
   
   .HomePartTwoPhoto {
     width: 600px;
@@ -120,6 +124,50 @@
     padding: 15px 30px;
     border: none;
     color: rgb(247, 247, 249);
+    font-size: x-small;
+    font: bolder;
+    border-radius: 5px;
+  }
+
+  .HomePartThree {
+    position: relative;
+  }
+
+  .HomePartThreePhoto {
+    display: block;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 10%;
+  }
+
+  .HomePartThreeText {
+    position: absolute;
+    top: 20%;
+    margin-right: 55%;
+    margin-left: 10vw;
+    background-color: rgb(94, 93, 93);
+    padding: 30px;
+    font-size: small;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .HomePartThreeText h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .HomePartThreeText p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .HomePartThree button {
+    background-color: white;
+    padding: 15px 40px;
+    border: none;
+    color: rgb(27, 129, 218);
     font-size: x-small;
     font: bolder;
     border-radius: 5px;

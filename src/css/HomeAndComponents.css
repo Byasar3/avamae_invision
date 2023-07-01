@@ -97,11 +97,11 @@
     border-radius: 5px;
   }
   
-  .HomePartTwo {
-  display: flex;
-  align-items: center;
-  margin: 5vh 10vh;
-  }
+    .HomePartTwo {
+    display: flex;
+    align-items: center;
+    margin: 5vh 10vh;
+    }
 
   .HomePartTwoText {
     flex: 1;
@@ -143,12 +143,12 @@
 
   .HomePartThreeText {
     position: absolute;
-    top: 20%;
+    top: 13%;
     margin-right: 55%;
     margin-left: 10vw;
     background-color: rgb(94, 93, 93);
     padding: 30px;
-    font-size: small;
+    font-size: x-small;
     color: white;
     border-radius: 5px;
   }
@@ -181,11 +181,11 @@
   }
 
   .HomePartFour h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .HomePartFour h4 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .HomePartFourParagraphs {
@@ -194,7 +194,19 @@
     column-gap: 30px; /* Gap between columns */
   }
 
-.HomePartFour p {
-  margin-bottom: 10px;
-}
+  .HomePartFour p {
+    margin-bottom: 10px;
+  }
+
+  .HomePartFour button {
+    background-color: rgb(27, 129, 218);
+    padding: 15px 30px;
+    border: none;
+    color: rgb(247, 247, 249);
+    font-size: x-small;
+    font: bolder;
+    border-radius: 5px;
+    margin: 20px;
+  }
+
 }

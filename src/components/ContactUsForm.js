@@ -2,53 +2,137 @@ import { useFormik } from "formik";
 
 const ContactUsForm = () => {
 
-    const formik = useFormik({})
+    const formik = useFormik({
+        initialValues: {
+            FullName: '',
+            Email: '',
+            PhoneNumber1: '',
+            PhoneNumber2: '',
+            Message: '',
+            AddressLine1: '',
+            AddressLine2: '',
+            CityTown: '',
+            StateCounty: '',
+            Postcode: '',
+            Country: ''
+        },
+        onSubmit: values => {
+            console.log('form data', values)
+        }
+    })
 
+    console.log('Form Values', formik.values)
     return (
         <div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
                 <div>
-                    <label className="NameLabel" htmlFor="name">Full name</label>
-                    <input className="NameInput" type="text" id="name"/>
+                    <label className="NameLabel" htmlFor="FullName">Full name</label>
+                    <input 
+                        className="NameInput" 
+                        type="text" 
+                        id="FullName" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.FullName}
+                    />
 
-                    <label className="EmailLabel" htmlFor="email">Email address</label>
-                    <input className="EmailInput" type="email" id="email"/>                    
+                    <label className="EmailLabel" htmlFor="Email">Email address</label>
+                    <input 
+                        className="EmailInput" 
+                        type="email" 
+                        id="Email" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.Email}
+                    />                    
                 </div>
                 <div>
-                    <label className="PhoneOneLabel" htmlFor="number1">Phone number 01 - <i>optional</i></label>
-                    <input className="PhoneOneInput" type="number" id="number1"/>
-                    <label className="PhoneTwoLabel" htmlFor="number2">Phone number 02 - <i>optional</i></label>
-                    <input className="PhoneTwoInput" type="number" id="number2"/>
+                    <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
+                    <input 
+                        className="PhoneNumber1Input" 
+                        type="number" 
+                        id="PhoneNumber1" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.PhoneNumber1}
+                    />
+                    
+                    <label className="PhoneTwoLabel" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
+                    <input 
+                        className="PhoneTwoInput" 
+                        type="number" 
+                        id="PhoneNumber2" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.PhoneNumber2}
+                    />
+
                     <button className="NewNumberBtn">Add new phone number</button>
                 </div>
                 <div>
-                    <label className="MessageLabel" htmlFor="message">message</label>
+                    <label className="MessageLabel" htmlFor="Message">message</label>
                     <label className="MaxTextLabel">maximum text length is 500 characters</label>
-                    <textarea id="message"/>
+                    <textarea 
+                        id="Message" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.Message}
+                    />
                 </div>
                 <div>
                     <input type="checkbox"/>
                     <label>Add address details</label>
 
-                    <label className="AddressLineOneLabel" htmlFor="address1">Address line 1</label>
-                    <input className="AddressLineOneInput" type="text" id="address1"/>
+                    <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
+                    <input 
+                        className="AddressLine1Input" 
+                        type="text" 
+                        id="AddressLine1" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.AddressLine1}
+                    />
 
-                    <label className="AddressLineTwoLabel" htmlFor="address2">Address line 2 - <i>optional</i> </label>
-                    <input className="AddressLineTwoInput" type="text" id="address2"/>   
+                    <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
+                    <input 
+                        className="AddressLine2Input" 
+                        type="text" 
+                        id="AddressLine2" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.AddressLine2}
+                    />   
 
-                    <label className="CityLabel" htmlFor="city">City/Town</label>
-                    <input className="CityInput" type="text" id="city"/>
+                    <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
+                    <input 
+                        className="CityTownInput" 
+                        type="text" 
+                        id="CityTown" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.CityTown}
+                    />
 
-                    <label className="StateLabel" htmlFor="state">State/Country</label>
-                    <input className="StateInput" type="text" id="state"/>  
+                    <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
+                    <input 
+                        className="StateCountyInput" 
+                        type="text" 
+                        id="StateCounty" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.StateCounty}
+                    />  
 
-                    <label className="PostcodeLabel" htmlFor="postcode">Postcode</label>
-                    <input className="PostcodeInput" type="text" id="postcode"/>
+                    <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
+                    <input 
+                        className="PostcodeInput" 
+                        type="text" 
+                        id="Postcode" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.Postcode}
+                    />
 
                     <label className="CountryLabel" htmlFor="country">Country</label>
-                    <input className="CountryInput" type="text" id="country"/>  
+                    <input 
+                        className="CountryInput" 
+                        type="text" 
+                        id="Country" 
+                        onChange={formik.handleChange} 
+                        value={formik.values.Country}
+                    />  
                 </div>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

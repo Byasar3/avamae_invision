@@ -1,12 +1,13 @@
 import OfficePhoto from "../Resources/shutterstock_696636415.jpg"
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
     return (
         <div className="AboutUsPage">
             <div className="AboutUsText">
                 <h2 className="">About Us</h2> <br/>
-                <p className="FirstLine">Populo facilisi nam no, dolor deleniti deseruisse ne cum, nam quodsi aliquam eligendi ne. Ferri euismod accusata te nec, summo accumsan at vix.</p> <br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar enim sed quam efficitur finibus. Fusce efficitur condimentum orci in hendrerit. Etiam aliquam vitae ante et scelerisque. Pellentesque commodo felis metus, nec congue nisi facilisis quis. Aenean maximus bibendum congue. Nulla pretium elit non facilisis imperdiet. Curabitur auctor lacus turpis, quis fringilla quam faucibus sed. Sed consequat magna enim, eu efficitur purus viverra sit amet. Praesent varius porta blandit mollis, felis ut convallis convallis.</p> <br/>
+                <p className="FirstLine">Populo facilisi nam no, dolor deleniti deseruisse ne cum, nam quodsi aliquam eligendi ne. Ferri euismod accusata te nec, summo accumsan at vix.</p> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar enim sed quam efficitur finibus. Fusce efficitur condimentum orci in hendrerit. Etiam aliquam vitae ante et scelerisque. Pellentesque commodo felis metus, nec congue nisi facilisis quis. Aenean maximus bibendum congue. Nulla pretium elit non facilisis imperdiet. Curabitur auctor lacus turpis, quis fringilla quam faucibus sed. Sed consequat magna enim, eu efficitur purus viverra sit amet. <Link>Praesent varius porta blandit</Link> mollis, felis ut convallis convallis.</p> <br/>
                 <p>Quisque non lectus dolor. In id dictum ex. Aenean laoreet velit sem, in dictum orci cursus sit amet. Duis ex est, aliquam quis tincidunt ut, imperdiet a lacus. Vestibulum condimentum vehicula nisl, at vestibulum velit varius sit amet. Cras lacinia facilisis tempus. Fusce nec tempus mauris. Sed vitae diam porta, tincidunt orci ac, maximus enim. Integer sodales sodales turpis, sit amet ultricies arcu lacinia id. Pellentesque volutpat in massa sit amet venenatis. Aliquam erat volutpat. Sed mollis, felis ut convallis convallis, nibh quam fringilla metus, a tempus metus nunc a sem. Morbi ut metus tincidunt, mollis orci quis, efficitur nibh.</p><br/>
                 <div className="ImageContainer">
                     <img src={OfficePhoto} alt="office space" className="AboutUsPhoto"/>

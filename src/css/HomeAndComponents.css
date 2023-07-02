@@ -111,6 +111,7 @@
 
   ul li {
     margin-bottom: 10px;
+    list-style-position: inside;
   }
   
   .HomePartTwo img {
@@ -197,6 +198,10 @@
 
   .HomePartFour p {
     margin-bottom: 10px;
+  }
+
+  .HomePartFourParagraphs .FirstParagraph {
+    font-weight: bold;
   }
 
   .HomePartFour button {

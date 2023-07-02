@@ -19,7 +19,6 @@ const Navbar = () => {
                     Log In
                 </button>
             </ul>
-
         </nav>
     )
 }

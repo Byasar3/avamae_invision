@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.css';
 import { Pagination } from "swiper";
 import { Link } from "react-router-dom";
 
-const CarouselContainer = () => {
+const CarouselComponent = () => {
     
     const [images, setImages] = useState([]);
 
@@ -45,4 +45,4 @@ const CarouselContainer = () => {
         );
     };
 
-export default CarouselContainer;
+export default CarouselComponent;

@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import axios from "axios";
 
 const ContactUsForm = () => {
@@ -6,6 +6,7 @@ const ContactUsForm = () => {
     const initialValues = {
         FullName: '',
         Email: '',
+        PhNumbers: [''],
         PhoneNumbers: ['',''],
         Message: '',
         AddressLine1: '',
@@ -16,11 +17,26 @@ const ContactUsForm = () => {
         Country: ''        
     }
 
-    const onSubmit = values => {            
-        axios({
-                method: 'post',
-                url: 'https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit',
-                data: values
+    const onSubmit = values => {   
+        console.log('values:', values)         
+        axios.post('https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit', {
+            FullName: values.FullName,
+            EmailAddress: values.Email,
+            PhoneNumbers: [values.PhoneNumbers[0], values.PhoneNumbers[1]],
+            Message: values.Message,
+            // bIncludeAddressDetails: 
+            AddressDetails: {
+                AddressLine1: values.AddressLine1,
+                AddressLine2: values.AddressLine2,
+                CityTown: values.CityTown,
+                StateCounty: values.StateCounty,
+                Postcode: values.Postcode,
+                Country: values.Country
+            }
+            }).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
             })
     }
 
@@ -57,11 +73,12 @@ const ContactUsForm = () => {
             errors.Postcode = 'Required'
         }
 
-        if (values.Country) {
+        if (!values.Country) {
             errors.Country = 'Required'
         }
 
         return errors
+
     }
 
     return (
@@ -98,15 +115,41 @@ const ContactUsForm = () => {
                         name="PhoneNumbers[0]" 
                     />
                     
-                    <label className="PhoneTwoLabel" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
+                    <label className="PhoneNumber2Label" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
                     <Field 
-                        className="PhoneTwoInput" 
+                        className="PhoneNumber2Input" 
                         type="number" 
                         id="PhoneNumber2"
-                        name="PhoneNumbers[0]" 
+                        name="PhoneNumbers[1]" 
                     />
+                    <div>
+                        <label>List of phone numbers</label>
+                        <FieldArray name="PhNumbers">
+                            {fieldArrayProps => {
+                                // destructuring:
+                                const {push, remove, form} = fieldArrayProps
+                                const { values } = form
+                                const { PhNumbers } = values
+                                return (
+                                    // iterate through PhNumbers array and render field component for each value in array
+                                    <div>
+                                        {PhNumbers.map((PhNumber, index) => (
+                                            <div key={index}>
+                                                <Field name={`PhNumbers[${index}]`}/>
+                                                {
+                                                    index = 1 &&
+                                                    (<button className="NewNumberBtn" onClick={() => push('')}>Add new phone number</button>)
 
-                    <button className="NewNumberBtn">Add new phone number</button>
+                                                }
+                                            </div>
+                                        ))}
+                                    </div>
+                                )
+
+                            }}
+                        </FieldArray>
+                    </div>
+
                 </div>
                 <div>
                     <label className="MessageLabel" htmlFor="Message">message</label>
@@ -166,14 +209,14 @@ const ContactUsForm = () => {
                     />
                     <ErrorMessage name="Postcode"/>
 
-                    <label className="CountryLabel" htmlFor="country">Country</label>
+                    <label className="CountryLabel" htmlFor="Country">Country</label>
                     <Field 
                         className="CountryInput" 
                         type="text" 
                         id="Country"
                         name="Country"                    
                     />
-                    <ErrorMessage name="Country "/>  
+                    <ErrorMessage name="Country"/>  
                 </div>
                 <button type="submit">Submit</button>
             </Form>

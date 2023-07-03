@@ -84,7 +84,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.FullName}
                     />
-                    {formik.errors.FullName ? <div>{formik.errors.FullName} </div> : null}
+                    {formik.errors.FullName ? (<div>{formik.errors.FullName} </div>) : null}
 
                     <label className="EmailLabel" htmlFor="Email">Email address</label>
                     <input 
@@ -94,7 +94,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Email}
                     />
-                    {formik.errors.Email ? <div>{formik.errors.Email} </div> : null}                    
+                    {formik.errors.Email ? (<div>{formik.errors.Email} </div>) : null}                    
                 </div>
                 <div>
                     <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
@@ -125,7 +125,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Message}
                     />
-                    {formik.errors.Message ? <div>{formik.errors.Message} </div> : null}
+                    {formik.errors.Message ? (<div>{formik.errors.Message} </div>) : null}
                 </div>
                 <div>
                     <input type="checkbox"/>
@@ -139,7 +139,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.AddressLine1}
                     />
-                    {formik.errors.AddressLine1 ? <div>{formik.errors.AddressLine1} </div> : null}
+                    {formik.errors.AddressLine1 ? (<div>{formik.errors.AddressLine1} </div>) : null}
 
                     <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
                     <input 
@@ -158,7 +158,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.CityTown}
                     />
-                    {formik.errors.CityTown ? <div>{formik.errors.CityTown} </div> : null}
+                    {formik.errors.CityTown ? (<div>{formik.errors.CityTown} </div>) : null}
 
                     <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
                     <input 
@@ -168,7 +168,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.StateCounty}
                     />
-                    {formik.errors.CityTown ? <div>{formik.errors.CityTown} </div> : null}  
+                    {formik.errors.CityTown ? (<div>{formik.errors.CityTown} </div>) : null}  
 
                     <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
                     <input 
@@ -178,7 +178,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Postcode}
                     />
-                    {formik.errors.Postcode ? <div>{formik.errors.Postcode} </div> : null}
+                    {formik.errors.Postcode ? (<div>{formik.errors.Postcode} </div>) : null}
 
                     <label className="CountryLabel" htmlFor="country">Country</label>
                     <input 
@@ -188,7 +188,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Country}
                     />
-                    {formik.errors.Country ? <div>{formik.errors.Country} </div> : null}  
+                    {formik.errors.Country ? (<div>{formik.errors.Country} </div>) : null}  
                 </div>
                 <button type="submit">Submit</button>
             </form>

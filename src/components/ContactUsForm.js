@@ -6,8 +6,7 @@ const ContactUsForm = () => {
     const initialValues = {
         FullName: '',
         Email: '',
-        PhoneNumber1: '',
-        PhoneNumber2: '',
+        PhoneNumbers: ['',''],
         Message: '',
         AddressLine1: '',
         AddressLine2: '',
@@ -64,7 +63,7 @@ const ContactUsForm = () => {
 
         return errors
     }
-    
+
     return (
         <Formik 
             initialValues={initialValues}
@@ -96,7 +95,7 @@ const ContactUsForm = () => {
                         className="PhoneNumber1Input" 
                         type="number" 
                         id="PhoneNumber1"
-                        name="PhoneNumber1" 
+                        name="PhoneNumbers[0]" 
                     />
                     
                     <label className="PhoneTwoLabel" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
@@ -104,7 +103,7 @@ const ContactUsForm = () => {
                         className="PhoneTwoInput" 
                         type="number" 
                         id="PhoneNumber2"
-                        name="PhoneNumber2" 
+                        name="PhoneNumbers[0]" 
                     />
 
                     <button className="NewNumberBtn">Add new phone number</button>
@@ -113,6 +112,7 @@ const ContactUsForm = () => {
                     <label className="MessageLabel" htmlFor="Message">message</label>
                     <label className="MaxTextLabel">maximum text length is 500 characters</label>
                     <Field 
+                        as="textarea"
                         id="Message"
                         name="Message" 
                     />

@@ -1,27 +1,77 @@
 import { useFormik } from "formik";
+import axios from "axios";
 
 const ContactUsForm = () => {
 
-    const formik = useFormik({
-        initialValues: {
-            FullName: '',
-            Email: '',
-            PhoneNumber1: '',
-            PhoneNumber2: '',
-            Message: '',
-            AddressLine1: '',
-            AddressLine2: '',
-            CityTown: '',
-            StateCounty: '',
-            Postcode: '',
-            Country: ''
-        },
-        onSubmit: values => {
-            console.log('form data', values)
+    const initialValues = {
+        FullName: '',
+        Email: '',
+        PhoneNumber1: '',
+        PhoneNumber2: '',
+        Message: '',
+        AddressLine1: '',
+        AddressLine2: '',
+        CityTown: '',
+        StateCounty: '',
+        Postcode: '',
+        Country: ''        
+    }
+
+    const onSubmit = values => {            
+        axios({
+                method: 'post',
+                url: 'https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit',
+                data: values
+            })
+    }
+
+    const validate = values => {
+        const errors = {}
+
+        if (!values.FullName) {
+            errors.FullName = 'Required'
         }
+
+        if (!values.Email) {
+            errors.Email = 'Required'
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email)) {
+            errors.Email = 'Invalid email address'
+        }
+
+        if (!values.Message) {
+            errors.Message = 'Required'
+        }
+
+        if (!values.AddressLine1) {
+            errors.AddressLine1 = 'Required'
+        }
+
+        if (!values.CityTown) {
+            errors.CityTown = 'Required'
+        }
+
+        if (!values.StateCounty) {
+            errors.StateCounty = 'Required'
+        }
+
+        if (!values.Postcode) {
+            errors.Postcode = 'Required'
+        }
+
+        if (values.Country) {
+            errors.Country = 'Required'
+        }
+
+        return errors
+    }
+
+    const formik = useFormik({
+        initialValues,
+        onSubmit,
+        validate
     })
 
-    console.log('Form Values', formik.values)
+    
     return (
         <div>
             <form onSubmit={formik.handleSubmit}>
@@ -34,6 +84,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.FullName}
                     />
+                    {formik.errors.FullName ? <div>{formik.errors.FullName} </div> : null}
 
                     <label className="EmailLabel" htmlFor="Email">Email address</label>
                     <input 
@@ -42,7 +93,8 @@ const ContactUsForm = () => {
                         id="Email" 
                         onChange={formik.handleChange} 
                         value={formik.values.Email}
-                    />                    
+                    />
+                    {formik.errors.Email ? <div>{formik.errors.Email} </div> : null}                    
                 </div>
                 <div>
                     <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
@@ -73,6 +125,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Message}
                     />
+                    {formik.errors.Message ? <div>{formik.errors.Message} </div> : null}
                 </div>
                 <div>
                     <input type="checkbox"/>
@@ -86,6 +139,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.AddressLine1}
                     />
+                    {formik.errors.AddressLine1 ? <div>{formik.errors.AddressLine1} </div> : null}
 
                     <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
                     <input 
@@ -104,6 +158,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.CityTown}
                     />
+                    {formik.errors.CityTown ? <div>{formik.errors.CityTown} </div> : null}
 
                     <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
                     <input 
@@ -112,7 +167,8 @@ const ContactUsForm = () => {
                         id="StateCounty" 
                         onChange={formik.handleChange} 
                         value={formik.values.StateCounty}
-                    />  
+                    />
+                    {formik.errors.CityTown ? <div>{formik.errors.CityTown} </div> : null}  
 
                     <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
                     <input 
@@ -122,6 +178,7 @@ const ContactUsForm = () => {
                         onChange={formik.handleChange} 
                         value={formik.values.Postcode}
                     />
+                    {formik.errors.Postcode ? <div>{formik.errors.Postcode} </div> : null}
 
                     <label className="CountryLabel" htmlFor="country">Country</label>
                     <input 
@@ -130,7 +187,8 @@ const ContactUsForm = () => {
                         id="Country" 
                         onChange={formik.handleChange} 
                         value={formik.values.Country}
-                    />  
+                    />
+                    {formik.errors.Country ? <div>{formik.errors.Country} </div> : null}  
                 </div>
                 <button type="submit">Submit</button>
             </form>

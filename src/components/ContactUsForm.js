@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import axios from "axios";
+import { useState } from "react";
 
 const ContactUsForm = () => {
 
@@ -78,7 +79,18 @@ const ContactUsForm = () => {
         }
 
         return errors
+    }
 
+    const [showPhone2Field, setShowPhone2Field] = useState(false)
+
+    const handleClickPhone2Btn = () => {
+        setShowPhone2Field(true)
+    }
+
+    const [showAddressFields, setShowAddressFields] = useState(false)
+
+    const handleCheckbox = () => {
+        setShowAddressFields(true)
     }
 
     return (
@@ -114,42 +126,19 @@ const ContactUsForm = () => {
                         id="PhoneNumber1"
                         name="PhoneNumbers[0]" 
                     />
-                    
-                    <label className="PhoneNumber2Label" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
-                    <Field 
-                        className="PhoneNumber2Input" 
-                        type="number" 
-                        id="PhoneNumber2"
-                        name="PhoneNumbers[1]" 
-                    />
+            
+                    <button className="NewNumberBtn" onClick={handleClickPhone2Btn}>Add new phone number</button>
+                    {showPhone2Field && (
                     <div>
-                        <label>List of phone numbers</label>
-                        <FieldArray name="PhNumbers">
-                            {fieldArrayProps => {
-                                // destructuring:
-                                const {push, remove, form} = fieldArrayProps
-                                const { values } = form
-                                const { PhNumbers } = values
-                                return (
-                                    // iterate through PhNumbers array and render field component for each value in array
-                                    <div>
-                                        {PhNumbers.map((PhNumber, index) => (
-                                            <div key={index}>
-                                                <Field name={`PhNumbers[${index}]`}/>
-                                                {
-                                                    index = 1 &&
-                                                    (<button className="NewNumberBtn" onClick={() => push('')}>Add new phone number</button>)
-
-                                                }
-                                            </div>
-                                        ))}
-                                    </div>
-                                )
-
-                            }}
-                        </FieldArray>
-                    </div>
-
+                        <label className="PhoneNumber2Label" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
+                        <Field 
+                            className="PhoneNumber2Input" 
+                            type="number" 
+                            id="PhoneNumber2"
+                            name="PhoneNumbers[1]" 
+                        />
+                    </div>                        
+                    )}
                 </div>
                 <div>
                     <label className="MessageLabel" htmlFor="Message">message</label>
@@ -162,61 +151,65 @@ const ContactUsForm = () => {
                     <ErrorMessage name="Message"/>
                 </div>
                 <div>
-                    <input type="checkbox"/>
+                    <input type="checkbox" checked={showAddressFields} onChange={(e) => setShowAddressFields(e.target.checked)}/>
                     <label>Add address details</label>
+                    {showAddressFields && (
+                        <div>
+                            <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
+                            <Field 
+                                className="AddressLine1Input" 
+                                type="text" 
+                                id="AddressLine1"
+                                name="AddressLine1" 
+                            />
+                            <ErrorMessage name="AddressLine1"/>
 
-                    <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
-                    <Field 
-                        className="AddressLine1Input" 
-                        type="text" 
-                        id="AddressLine1"
-                        name="AddressLine1" 
-                    />
-                    <ErrorMessage name="AddressLine1"/>
+                            <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
+                            <Field 
+                                className="AddressLine2Input" 
+                                type="text" 
+                                id="AddressLine2"
+                                name="AddressLine2" 
+                            />   
 
-                    <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
-                    <Field 
-                        className="AddressLine2Input" 
-                        type="text" 
-                        id="AddressLine2"
-                        name="AddressLine2" 
-                    />   
+                            <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
+                            <Field 
+                                className="CityTownInput" 
+                                type="text" 
+                                id="CityTown"
+                                name="CityTown" 
+                            />
+                            <ErrorMessage name="CityTown"/>
 
-                    <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
-                    <Field 
-                        className="CityTownInput" 
-                        type="text" 
-                        id="CityTown"
-                        name="CityTown" 
-                    />
-                    <ErrorMessage name="CityTown"/>
+                            <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
+                            <Field 
+                                className="StateCountyInput" 
+                                type="text" 
+                                id="StateCounty"
+                                name="StateCounty" 
+                            />
+                            <ErrorMessage name="StateCounty"/>  
 
-                    <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
-                    <Field 
-                        className="StateCountyInput" 
-                        type="text" 
-                        id="StateCounty"
-                        name="StateCounty" 
-                    />
-                    <ErrorMessage name="StateCounty"/>  
+                            <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
+                            <Field 
+                                className="PostcodeInput" 
+                                type="text" 
+                                id="Postcode"
+                                name="Postcode" 
+                            />
+                            <ErrorMessage name="Postcode"/>
 
-                    <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
-                    <Field 
-                        className="PostcodeInput" 
-                        type="text" 
-                        id="Postcode"
-                        name="Postcode" 
-                    />
-                    <ErrorMessage name="Postcode"/>
-
-                    <label className="CountryLabel" htmlFor="Country">Country</label>
-                    <Field 
-                        className="CountryInput" 
-                        type="text" 
-                        id="Country"
-                        name="Country"                    
-                    />
-                    <ErrorMessage name="Country"/>  
+                            <label className="CountryLabel" htmlFor="Country">Country</label>
+                            <Field 
+                                className="CountryInput" 
+                                type="text" 
+                                id="Country"
+                                name="Country"                    
+                            />
+                            <ErrorMessage name="Country"/> 
+                        </div>
+                    )}
+ 
                 </div>
                 <button type="submit">Submit</button>
             </Form>

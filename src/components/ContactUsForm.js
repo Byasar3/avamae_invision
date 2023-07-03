@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 
 const ContactUsForm = () => {
@@ -64,57 +64,47 @@ const ContactUsForm = () => {
 
         return errors
     }
-
-    const formik = useFormik({
-        initialValues,
-        onSubmit,
-        validate
-    })
-
     
     return (
-        <div>
-            <form onSubmit={formik.handleSubmit}>
+        <Formik 
+            initialValues={initialValues}
+            validate={validate}
+            onSubmit={onSubmit}>
+            <Form>
                 <div>
                     <label className="NameLabel" htmlFor="FullName">Full name</label>
-                    <input 
+                    <Field 
                         className="NameInput" 
                         type="text" 
-                        id="FullName" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.FullName}
-                        onBlur={formik.handleBlur}
+                        id="FullName"
+                        name="FullName" 
                     />
-                    {formik.touched.FullName && formik.errors.FullName ? (<div>{formik.errors.FullName} </div>) : null}
+                    <ErrorMessage name="FullName"/>
 
                     <label className="EmailLabel" htmlFor="Email">Email address</label>
-                    <input 
+                    <Field 
                         className="EmailInput" 
                         type="email" 
-                        id="Email" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.Email}
-                        onBlur={formik.handleBlur}
+                        id="Email"
+                        name="Email" 
                     />
-                    {formik.touched.Email && formik.errors.Email ? (<div>{formik.errors.Email} </div>) : null}                    
+                    <ErrorMessage name="Email"/>                
                 </div>
                 <div>
                     <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
-                    <input 
+                    <Field 
                         className="PhoneNumber1Input" 
                         type="number" 
-                        id="PhoneNumber1" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.PhoneNumber1}
+                        id="PhoneNumber1"
+                        name="PhoneNumber1" 
                     />
                     
                     <label className="PhoneTwoLabel" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
-                    <input 
+                    <Field 
                         className="PhoneTwoInput" 
                         type="number" 
-                        id="PhoneNumber2" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.PhoneNumber2}
+                        id="PhoneNumber2"
+                        name="PhoneNumber2" 
                     />
 
                     <button className="NewNumberBtn">Add new phone number</button>
@@ -122,85 +112,72 @@ const ContactUsForm = () => {
                 <div>
                     <label className="MessageLabel" htmlFor="Message">message</label>
                     <label className="MaxTextLabel">maximum text length is 500 characters</label>
-                    <textarea 
-                        id="Message" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.Message}
-                        onBlur={formik.handleBlur}
+                    <Field 
+                        id="Message"
+                        name="Message" 
                     />
-                    {formik.touched.Message && formik.errors.Message ? (<div>{formik.errors.Message} </div>) : null}
+                    <ErrorMessage name="Message"/>
                 </div>
                 <div>
                     <input type="checkbox"/>
                     <label>Add address details</label>
 
                     <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
-                    <input 
+                    <Field 
                         className="AddressLine1Input" 
                         type="text" 
-                        id="AddressLine1" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.AddressLine1}
-                        onBlur={formik.handleBlur}
+                        id="AddressLine1"
+                        name="AddressLine1" 
                     />
-                    {formik.touched.AddressLine1 && formik.errors.AddressLine1 ? (<div>{formik.errors.AddressLine1} </div>) : null}
+                    <ErrorMessage name="AddressLine1"/>
 
                     <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
-                    <input 
+                    <Field 
                         className="AddressLine2Input" 
                         type="text" 
-                        id="AddressLine2" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.AddressLine2}
+                        id="AddressLine2"
+                        name="AddressLine2" 
                     />   
 
                     <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
-                    <input 
+                    <Field 
                         className="CityTownInput" 
                         type="text" 
-                        id="CityTown" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.CityTown}
-                        onBlur={formik.handleBlur}
+                        id="CityTown"
+                        name="CityTown" 
                     />
-                    {formik.touched.CityTown && formik.errors.CityTown ? (<div>{formik.errors.CityTown} </div>) : null}
+                    <ErrorMessage name="CityTown"/>
 
                     <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
-                    <input 
+                    <Field 
                         className="StateCountyInput" 
                         type="text" 
-                        id="StateCounty" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.StateCounty}
-                        onBlur={formik.handleBlur}
+                        id="StateCounty"
+                        name="StateCounty" 
                     />
-                    {formik.touched.StateCounty && formik.errors.StateCounty ? (<div>{formik.errors.StateCounty} </div>) : null}  
+                    <ErrorMessage name="StateCounty"/>  
 
                     <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
-                    <input 
+                    <Field 
                         className="PostcodeInput" 
                         type="text" 
-                        id="Postcode" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.Postcode}
-                        onBlur={formik.handleBlur}
+                        id="Postcode"
+                        name="Postcode" 
                     />
-                    {formik.touched.Postcode && formik.errors.Postcode ? (<div>{formik.errors.Postcode} </div>) : null}
+                    <ErrorMessage name="Postcode"/>
 
                     <label className="CountryLabel" htmlFor="country">Country</label>
-                    <input 
+                    <Field 
                         className="CountryInput" 
                         type="text" 
-                        id="Country" 
-                        onChange={formik.handleChange} 
-                        value={formik.values.Country}
-                        onBlur={formik.handleBlur}
+                        id="Country"
+                        name="Country"                    
                     />
-                    {formik.touched.Country && formik.errors.Country ? (<div>{formik.errors.Country} </div>) : null}  
+                    <ErrorMessage name="Country "/>  
                 </div>
                 <button type="submit">Submit</button>
-            </form>
-        </div>
+            </Form>
+        </Formik>
     )
 }
 

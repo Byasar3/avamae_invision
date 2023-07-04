@@ -71,33 +71,32 @@ const ContactUsForm = () => {
         }
 
         if (values.showAddressFields) {
-        
-        if (!values.AddressLine1) {
-            errors.AddressLine1 = 'Required'
-        }
+            if (!values.AddressLine1) { 
+                errors.AddressLine1 = 'Required'
+            }
 
-        if (!values.CityTown) {
-            errors.CityTown = 'Required'
-        }
+            if (!values.CityTown) {
+                errors.CityTown = 'Required'
+            }
 
-        if (!values.StateCounty) {
-            errors.StateCounty = 'Required'
-        }
+            if (!values.StateCounty) {
+                errors.StateCounty = 'Required'
+            }
 
-        if (!values.Postcode) {
-            errors.Postcode = 'Required'
-        }
+            if (!values.Postcode) {
+                errors.Postcode = 'Required'
+            }
 
-        if (!values.Country) {
-            errors.Country = 'Required'
-        }  
+            if (!values.Country) {
+                errors.Country = 'Required'
+            }  
         }
 
         return errors
     }
 
     const [showPhone2Field, setShowPhone2Field] = useState(false)
-
+    
     const handleClickPhone2Btn = () => {
         setShowPhone2Field(true)
     }
@@ -105,144 +104,144 @@ const ContactUsForm = () => {
     const [showAddressFields, setShowAddressFields] = useState(false)
 
     return (
-        <Formik 
-            initialValues={initialValues}
-            validate={validate}
-            onSubmit={onSubmit}>
-                <Form>
-                    {!isFormSubmitted &&( 
-                        <div>
-                    <div>
-                        <label className="NameLabel" htmlFor="FullName">Full name</label>
-                    <Field 
-                        className="NameInput" 
-                        type="text" 
-                        id="FullName"
-                        name="FullName" 
-                    />
-                    <ErrorMessage name="FullName"/>
-
-                    <label className="EmailLabel" htmlFor="Email">Email address</label>
-                    <Field 
-                        className="EmailInput" 
-                        type="email" 
-                        id="Email"
-                        name="Email" 
-                    />
-                    <ErrorMessage name="Email"/>                
-                 </div>
-                 <div>
-                    <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
-                    <Field 
-                        className="PhoneNumber1Input" 
-                        type="text" 
-                        id="PhoneNumber1"
-                        name="PhoneNumbers[0]" 
-                    />
-            
-                    <button className="NewNumberBtn" onClick={handleClickPhone2Btn}>Add new phone number</button>
-                    {showPhone2Field && (
-                    <div>
-                        <label className="PhoneNumber2Label" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
-                        <Field 
-                            className="PhoneNumber2Input" 
+        <Formik
+        initialValues={initialValues}
+        validate={validate}
+        onSubmit={onSubmit}
+        >
+            <Form>
+                {!isFormSubmitted &&(
+                    <div className="FullForm">
+                        <div className="NameAndEmail">
+                            <label className="NameLabel" htmlFor="FullName">Full name</label>
+                            <Field 
+                            className="NameInput" 
                             type="text" 
-                            id="PhoneNumber2"
-                            name="PhoneNumbers[1]" 
-                        />
-                    </div>                        
-                    )}
-                 </div>
-                 <div>
-                    <label className="MessageLabel" htmlFor="Message">message</label>
-                    <label className="MaxTextLabel">maximum text length is 500 characters</label>
-                    <Field 
-                        as="textarea"
-                        id="Message"
-                        name="Message" 
-                    />
-                    <ErrorMessage name="Message"/>
-                 </div>
-                 <div>
-                    <input type="checkbox" checked={showAddressFields} onChange={(e) => setShowAddressFields(e.target.checked)}/>
-                    <label>Add address details</label>
-                    {showAddressFields && (
-                        <div>
-                            <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
-                            <Field 
-                                className="AddressLine1Input" 
-                                type="text" 
-                                id="AddressLine1"
-                                name="AddressLine1" 
+                            id="FullName"
+                            name="FullName" 
                             />
-                            <ErrorMessage name="AddressLine1"/>
+                            <ErrorMessage name="FullName"/>
 
-                            <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
+                            <label className="EmailLabel" htmlFor="Email">Email address</label>
                             <Field 
-                                className="AddressLine2Input" 
-                                type="text" 
-                                id="AddressLine2"
-                                name="AddressLine2" 
-                            />   
-
-                            <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
-                            <Field 
-                                className="CityTownInput" 
-                                type="text" 
-                                id="CityTown"
-                                name="CityTown" 
+                            className="EmailInput" 
+                            type="email" 
+                            id="Email"
+                            name="Email" 
                             />
-                            <ErrorMessage name="CityTown"/>
-
-                            <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
+                            <ErrorMessage name="Email"/>                
+                        </div>
+                        <div className="PhoneNumbers">
+                            <label className="PhoneNumber1Label" htmlFor="PhoneNumber1">Phone number 01 - <i>optional</i></label>
                             <Field 
-                                className="StateCountyInput" 
-                                type="text" 
-                                id="StateCounty"
-                                name="StateCounty" 
+                            className="PhoneNumber1Input" 
+                            type="text" 
+                            id="PhoneNumber1"
+                            name="PhoneNumbers[0]" 
                             />
-                            <ErrorMessage name="StateCounty"/>  
 
-                            <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
-                            <Field 
-                                className="PostcodeInput" 
-                                type="text" 
-                                id="Postcode"
-                                name="Postcode" 
-                            />
-                            <ErrorMessage name="Postcode"/>
+                            <button className="NewNumberBtn" onClick={handleClickPhone2Btn}>Add new phone number</button>
 
-                            <label className="CountryLabel" htmlFor="Country">Country</label>
+                            {showPhone2Field && (
+                                <div className="SecondPhoneNumber">
+                                    <label className="PhoneNumber2Label" htmlFor="PhoneNumber2">Phone number 02 - <i>optional</i></label>
+                                    <Field 
+                                    className="PhoneNumber2Input" 
+                                    type="text" 
+                                    id="PhoneNumber2"
+                                    name="PhoneNumbers[1]" 
+                                    />
+                                </div>                        
+                            )}
+                        </div>
+                        <div className="Message">
+                            <label className="MessageLabel" htmlFor="Message">message</label>
+                            <label className="MaxTextLabel">maximum text length is 500 characters</label>
                             <Field 
-                                className="CountryInput" 
-                                type="text" 
-                                id="Country"
-                                name="Country"                    
+                            as="textarea"
+                            id="Message"
+                            name="Message" 
                             />
-                            <ErrorMessage name="Country"/> 
+                            <ErrorMessage name="Message"/>
+                        </div>
+                        <div className="CheckboxAndAddressInfo">
+                            <input className="Checkbox" type="checkbox" checked={showAddressFields} onChange={(e) => setShowAddressFields(e.target.checked)}/>
+                            <label className="CheckBoxLabel">Add address details</label>
+                            {showAddressFields && (
+                                <div className="AddressForm">
+                                    <label className="AddressLine1Label" htmlFor="AddressLine1">Address line 1</label>
+                                    <Field 
+                                    className="AddressLine1Input" 
+                                    type="text" 
+                                    id="AddressLine1"
+                                    name="AddressLine1" 
+                                    />
+                                    <ErrorMessage name="AddressLine1"/>
+
+                                    <label className="AddressLine2Label" htmlFor="AddressLine2">Address line 2 - <i>optional</i> </label>
+                                    <Field 
+                                    className="AddressLine2Input" 
+                                    type="text" 
+                                    id="AddressLine2"
+                                    name="AddressLine2" 
+                                    />   
+
+                                    <label className="CityTownLabel" htmlFor="CityTown">City/Town</label>
+                                    <Field 
+                                    className="CityTownInput" 
+                                    type="text" 
+                                    id="CityTown"
+                                    name="CityTown" 
+                                    />
+                                    <ErrorMessage name="CityTown"/>
+
+                                    <label className="StateCountyLabel" htmlFor="StateCounty">State/County</label>
+                                    <Field 
+                                    className="StateCountyInput" 
+                                    type="text" 
+                                    id="StateCounty"
+                                    name="StateCounty" 
+                                    />
+                                    <ErrorMessage name="StateCounty"/>  
+
+                                    <label className="PostcodeLabel" htmlFor="Postcode">Postcode</label>
+                                    <Field 
+                                    className="PostcodeInput" 
+                                    type="text" 
+                                    id="Postcode"
+                                    name="Postcode" 
+                                    />
+                                    <ErrorMessage name="Postcode"/>
+
+                                    <label className="CountryLabel" htmlFor="Country">Country</label>
+                                    <Field 
+                                    className="CountryInput" 
+                                    type="text" 
+                                    id="Country"
+                                    name="Country"                    
+                                    />
+                                    <ErrorMessage name="Country"/> 
+                                </div>
+                            )}
+                            <button type="submit" disabled>Submit</button>
+                        </div>
+                    </div>
+                )}
+                <div>
+                    {isFormSubmitted && formSubmissionStatus === "success" && (
+                        <div className="SuccessMsg">
+                            <img src="greentick" alt="greentick"/>
+                            <h3>Your message has been sent</h3>
+                            <h4>We will contact you within 24 hours.</h4>
                         </div>
                     )}
-                    <button type="submit">Submit</button>
-                    </div>
-
-                 </div>
-                 )}
-                 <div>
-                    {isFormSubmitted && formSubmissionStatus === "success" && (
-                    <div className="SuccessMsg">
-                        <img src="greentick" alt="greentick"/>
-                        <h3>Your message has been sent</h3>
-                        <h4>We will contact you within 24 hours.</h4>
-                    </div>
-                 )}
-                 {isFormSubmitted && formSubmissionStatus === "error" && (
-                    <div className="ErrorMsg">
-                        <p>Oh no! Something went wrong. Please try again.</p>
-                    </div>
-                 )}
-                </div>
-                </Form>
-            
+                    {isFormSubmitted && formSubmissionStatus === "error" && (
+                        <div className="ErrorMsg">
+                            <p>Oh no! Something went wrong. Please try again.</p>
+                        </div>   
+                    )}
+                </div>     
+            </Form>
         </Formik>
     )
 }

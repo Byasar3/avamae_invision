@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import { useState } from "react";
+import GreenTick from '../Resources/Icon_Valid.svg'
 
 const ContactUsForm = () => {
 
@@ -249,7 +250,7 @@ const ContactUsForm = () => {
                 <div>
                     {isFormSubmitted && formSubmissionStatus === "success" && (
                         <div className="SuccessMsg">
-                            <img src="greentick" alt="greentick"/>
+                            <img src={GreenTick} alt="greentick"/>
                             <h3>Your message has been sent</h3>
                             <h4>We will contact you within 24 hours.</h4>
                         </div>

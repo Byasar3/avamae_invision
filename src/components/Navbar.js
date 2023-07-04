@@ -15,9 +15,7 @@ const Navbar = () => {
                 <li>
                     <Link to='/contact-us'>CONTACT US</Link>
                 </li>
-                <button className="LogInButton">
-                    Log In
-                </button>
+                <button className="LogInButton">Log In</button>
             </ul>
         </nav>
     )

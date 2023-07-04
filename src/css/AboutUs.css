@@ -9,7 +9,7 @@
     .AboutUsText {
         display: flex;
         flex-direction: column;
-        padding: 4vh 10vh;
+        padding: 4vh 10vw;
     }
 
     .FirstLine {

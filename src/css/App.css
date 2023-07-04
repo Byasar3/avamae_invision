@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Khula-Light ;
+    src: url(../khula/Khula-Light.ttf);
+}
+
+body {
+    font-family: "Khula-Light";
+    letter-spacing: 1px;
+}

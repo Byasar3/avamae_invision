@@ -34,14 +34,14 @@
     font-size: xx-small;
     color: black;
     align-items: center;
-    margin-right: 15vh; 
+    margin-right: 15vw; 
   }
   
   .NavbarLogo {
     width: 150px;
     height: 80px;
     align-items: center;
-    margin-left: 10vh; 
+    margin-left: 10vw; 
   }
   
   .LogInButton {

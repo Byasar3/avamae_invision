@@ -1,5 +1,6 @@
 import '../src/css/HomeAndComponents.css';
 import '../src/css/AboutUs.css'
+import '../src/css/ContactUs.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';

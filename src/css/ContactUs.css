@@ -1,0 +1,122 @@
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
+}
+
+.ContactUsPage p {
+    font-size: small;
+}
+
+.ContactUsPage {
+    background-image: url(../Resources/Img_Contact.png);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    background-size: 38%;
+}
+
+.ContactUsContainer {
+    margin-left: 10vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 40%;
+    gap: 9px;
+}
+
+.TopRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+
+.NameContainer, .EmailContainer, .AddressLine1Container, .AddressLine2Container, .CityTownContainer, .StateCountyContainer, .PostcodeContainer, .CountryContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vh;
+}
+
+.NameInput, .EmailInput, .AddressLine1Input, .AddressLine2Input {
+    width: 18vw;
+}
+
+.CityTownInput, .StateCountyInput, .PostcodeInput, .CountryInput {
+    width: 8vw;
+}
+
+.Label, .MessageLabel, .MaxTextLabel, .CheckboxLabel  {
+    padding-bottom: 10px;
+    font-size: x-small;
+}
+
+.PhoneNumber1Input, .PhoneNumber2Input, .AddressLine1Input, .AddressLine2Input, .CityTownInput, .StateCountyInput, .PostcodeInput, .CountryInput, .NameInput, .EmailInput {
+    height: 5vh;
+    background-color: rgb(238, 237, 237);
+    border: 0.5px solid lightgray;
+}
+
+.NewNumberBtn {
+    height: 5vh;
+    background-color: rgb(210, 240, 250);
+    color: rgb(21, 70, 131);
+    border: none;
+    border-radius: 2px;
+    font-size: x-small;
+    font-weight: bold;
+}
+    
+.PhoneNumbers, .SecondPhoneNumber {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4vh;
+}
+
+.ErrorMsg {
+    font-size: x-small;
+    color: red;
+}
+
+.Message {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4vh;
+}
+
+.MessageBox {
+    height: 15vh;
+    background-color: rgb(238, 237, 237);
+    border: 0.5px solid lightgray;
+}
+
+.AddressForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.CheckboxContainer {
+    padding-bottom: 4vh;
+}
+
+.SubmitBtn {
+    background-image: url(../Resources/Icon_Submit.svg);
+    background-repeat: no-repeat;
+    background-size: 3%;
+    background-position: 1vw;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(21, 70, 131);
+    color: white ;
+    border: none;
+    border-radius: 2px;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+
+
+
+ 
